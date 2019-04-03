@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/CSS/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+
+        <h1>Mattias</h1>
+        <img src="~/IMG/sm.gif" width="90" height="90" alt="Logo">
+
+        <nav>
+            <ol>
+
+                <li>
+                    @Html.ActionLink("About Me", "index")
+
+                </li>
+                <li>
+                    @Html.ActionLink("Sledge Hockey", "sledge")
+
+                </li>
+                <li>
+
+                    @Html.ActionLink("Kontakt", "Kontakt")
+                </li>
+
+            </ol>
+        </nav>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div> @DateTime.Now</div>
+        <p>Made by:  Mattias Gustavsson &copy;</p>
+        
+    </footer>
+</body>
+</html>
