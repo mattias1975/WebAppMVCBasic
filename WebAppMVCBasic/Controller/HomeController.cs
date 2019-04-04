@@ -31,7 +31,7 @@ namespace WebAppMVCBasic
       
             ViewBag.msg = Temperature.FeverChecker(temprature, "");
             
-            return View();
+            return View();//new
         }
 
         [HttpGet]
