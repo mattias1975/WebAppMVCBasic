@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Gues";
+}
+<div>
+    <h2>Gues a interger between 1-100</h2>
+    <form asp-controller="Home" asp-action="Gues" method="post">
+        Vilket tal mellan 1-100 tror du slumpas fram?
+        <input name="Guesing" id="Guesing" type="number" min="1" max="100" placeholder="insert " />
+        <button>Submit</button>
+
+    </form>
+    <h3>@ViewBag.msg</h3>
+    <!--
+        Gör formulär där man skriver in sin Talet som ska kontrolleras -->
+  
+
+    </div>

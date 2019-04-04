@@ -34,6 +34,18 @@ namespace WebAppMVCBasic
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Gues()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Gues(int Guesing)
+        {
+            //todo
+            return View();
+        }
+
         public IActionResult sledge()
 
         {
