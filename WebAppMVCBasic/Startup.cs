@@ -10,11 +10,28 @@ using Microsoft.Extensions.DependencyInjection;
 namespace WebAppMVCBasic
 {
     public class Startup
+
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+    
+     
+      
+
+            public void ConfigureServices(IServiceCollection services)
+
         {
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(options =>
+            {
+                // Set a short timeout for easy testing.
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.HttpOnly = false;
+                // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddMvc();
         }
 
