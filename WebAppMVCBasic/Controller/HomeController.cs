@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using WebbAppFirstCore.Models;
 
 namespace WebAppMVCBasic
 {
@@ -12,18 +13,32 @@ namespace WebAppMVCBasic
         {
             return View();
         }
-                
-        
-            public IActionResult Kontakt()
-            {
-                return View();
-            }
 
+
+        public IActionResult Kontakt()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult Fever()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Fever(int temprature)
+        {
+      
+            ViewBag.msg = Temperature.FeverChecker(temprature, "");
+            
+            return View();
+        }
 
         public IActionResult sledge()
 
         {
             return View();
-            }
         }
+    }
 }
+      
