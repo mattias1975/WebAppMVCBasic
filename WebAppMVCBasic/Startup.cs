@@ -33,6 +33,7 @@ namespace WebAppMVCBasic
             });
 
             services.AddMvc();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,11 +46,7 @@ namespace WebAppMVCBasic
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
+           app.UseSession();
         }
     }
 }
