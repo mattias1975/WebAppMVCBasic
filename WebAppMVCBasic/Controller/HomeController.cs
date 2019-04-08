@@ -50,16 +50,16 @@ namespace WebAppMVCBasic
 
             //save to session
             //todo code
-            int? Number = theNumber;
-            Number = HttpContext.Session.GetInt32("_Number");
-            ViewBag.Number =Number;
-            return View();
+            int? number;
+           number= ViewBag.Message = HttpContext.Session.GetString("theNumber");
+            
+            return base.View("number");
         }
         [HttpPost]
         public IActionResult Gues(int Guesing)
         {
             //todo
-            HttpContext.Session.SetInt32("Number", Guesing);
+            HttpContext.Session.SetInt32("Guesing", Guesing);
             return View("index",Guesing);
         }
 

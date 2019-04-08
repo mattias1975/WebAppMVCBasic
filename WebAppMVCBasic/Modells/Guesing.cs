@@ -6,9 +6,9 @@ using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
 namespace WebbAppFirstCore.Models
 {
-    public class Guesing
+    public class Gues
     {
-        public static string Gues(int answer)
+        public static string Guesing(int answer)
         {
             string you;
             you = "";
@@ -24,7 +24,8 @@ namespace WebbAppFirstCore.Models
                 Random random = new Random();
                 answer = random.Next(1, 100);
                 check = false;
-
+                 return ("answer");
+               
             }
             antal++;
             if (yanswer == answer)
@@ -36,8 +37,9 @@ namespace WebbAppFirstCore.Models
             else
             {
 
-
                 text = "whats wrong gues again";
+                check = false;
+                antal++;
             }
 
             return text;

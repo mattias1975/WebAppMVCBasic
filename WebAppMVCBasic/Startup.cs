@@ -23,17 +23,17 @@ namespace WebAppMVCBasic
         {
             services.AddDistributedMemoryCache();
 
-            services.AddSession(options =>
-            {
-                // Set a short timeout for easy testing.
-                options.IdleTimeout = TimeSpan.FromMinutes(10);
-                options.Cookie.HttpOnly = false;
-                // Make the session cookie essential
-                options.Cookie.IsEssential = true;
-            });
-
-            services.AddMvc();
+          
+                services.AddSession(options =>
+                {
+                    options.Cookie.Name = ".AdventureWorks.Session";
+                    options.IdleTimeout = TimeSpan.FromMinutes(10);
+                    options.Cookie.IsEssential = true;
+                });
+         
             services.AddSession();
+            services.AddMvc();
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,7 +46,7 @@ namespace WebAppMVCBasic
 
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-           app.UseSession();
+            app.UseSession();
         }
     }
 }
