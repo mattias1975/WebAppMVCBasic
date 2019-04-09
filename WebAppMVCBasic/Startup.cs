@@ -44,9 +44,9 @@ namespace WebAppMVCBasic
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseSession();
             app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
-            app.UseSession();
         }
     }
 }

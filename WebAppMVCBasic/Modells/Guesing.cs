@@ -8,41 +8,35 @@ namespace WebbAppFirstCore.Models
 {
     public class Gues
     {
-        public static string Guesing(int answer)
+        public static string Guesing(int thenumber, int Guesing)
         {
-            string you;
-            you = "";
-            int yanswer;
-            string text = "";
-            int antal = 0;
-            yanswer = Int32.Parse(you);
-            bool check = true;
 
-
-            if (check == true)
+            string answer;
+           
+            if (Guesing != thenumber)
             {
-                Random random = new Random();
-                answer = random.Next(1, 100);
-                check = false;
-                 return ("answer");
-               
+                answer = "Wrong answer";
+                if (Guesing < thenumber)
+                {
+                    answer = "Wrong answer gues to low";
+                }
+                if (Guesing > thenumber)
+                {
+                    answer = "Wrong answer gues to high";
+                }
             }
-            antal++;
-            if (yanswer == answer)
-            {
-                text = "whats rignt you did on " + (antal) + "guesing";
-                check = true;
-
-            }
+          
             else
             {
+                answer = "Congratulation what number is it";
+                if(Guesing<thenumber)
+                {
 
-                text = "whats wrong gues again";
-                check = false;
-                antal++;
+                }
             }
 
-            return text;
+            return answer;
+
         }
     }
 }

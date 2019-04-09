@@ -35,32 +35,42 @@ namespace WebAppMVCBasic
             return View();//new
         }
         public const string SessiontheNumber = "_theNumber";
-        
 
-        public int SessionInfo_theNumber{ get; private set; }
+
+        public int SessionInfo_theNumber { get; private set; }
         public object theNumber { get; private set; }
 
         [HttpGet]
-      
+
         public IActionResult Gues()
-            
+
         {
-            
+
             int theNumber = new Random().Next(1, 100);
 
             //save to session
+            HttpContext.Session.SetInt32("theNumber", theNumber);
+
             //todo code
-            int? number;
-           number= ViewBag.Message = HttpContext.Session.GetString("theNumber");
-            
-            return base.View("number");
+
+
+            return View();
         }
         [HttpPost]
         public IActionResult Gues(int Guesing)
         {
+            if (HttpContext.Session.GetInt32("theNumber") != null)
+            {
+                int theNumber = (int)HttpContext.Session.GetInt32("theNumber");
+                ViewBag.msg = WebbAppFirstCore.Models.Gues.Guesing(theNumber,Guesing);
+            }
+            else
+            {
+                return RedirectToAction("Gues");
+            }
             //todo
-            HttpContext.Session.SetInt32("Guesing", Guesing);
-            return View("index",Guesing);
+            //HttpContext.Session.SetInt32("Guesing", Guesing);
+            return View();
         }
 
         public IActionResult sledge()
@@ -70,4 +80,4 @@ namespace WebAppMVCBasic
         }
     }
 }
-      
+
