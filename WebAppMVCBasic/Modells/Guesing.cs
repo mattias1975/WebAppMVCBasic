@@ -15,6 +15,8 @@ namespace WebbAppFirstCore.Models
            
             if (Guesing != thenumber)
             {
+                int number=0;
+                number++;
                 answer = "Wrong answer";
                 if (Guesing < thenumber)
                 {
