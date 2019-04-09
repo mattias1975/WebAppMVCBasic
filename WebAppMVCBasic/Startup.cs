@@ -14,26 +14,26 @@ namespace WebAppMVCBasic
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-    
-     
-      
 
-            public void ConfigureServices(IServiceCollection services)
+
+
+
+        public void ConfigureServices(IServiceCollection services)
 
         {
             services.AddDistributedMemoryCache();
 
-          
-                services.AddSession(options =>
-                {
-                    options.Cookie.Name = ".AdventureWorks.Session";
-                    options.IdleTimeout = TimeSpan.FromMinutes(10);
-                    options.Cookie.IsEssential = true;
-                });
-         
+
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = ".AdventureWorks.Session";
+                options.IdleTimeout = TimeSpan.FromMinutes(10);
+                options.Cookie.IsEssential = true;
+            });
+
             services.AddSession();
             services.AddMvc();
-           
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,7 +50,12 @@ namespace WebAppMVCBasic
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("Think", "{controller=Home}/{action=sledge}/{id?}");
+                routes.MapRoute(
+                    name: "fever_route",
+                    template: "feber",
+                    defaults: new { controller = "Home", action = "Fever" });
+
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }
