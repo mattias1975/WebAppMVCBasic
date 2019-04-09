@@ -50,7 +50,7 @@ namespace WebAppMVCBasic
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+                routes.MapRoute("Think", "{controller=Home}/{action=sledge}/{id?}");
             });
         }
     }
