@@ -51,9 +51,26 @@ namespace WebAppMVCBasic
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                 name: "Sledge_route",
+                 template: "Kälk-Hockey",
+                 defaults: new { controller = "Home", action = "Sledge" });
+
+                routes.MapRoute(
+                 name: "Index_route",
+                 template: "Om",
+                 defaults: new { controller = "Home", action = "Index" });
+
+                routes.MapRoute(
                     name: "fever_route",
-                    template: "feber",
+                    template: "Feber",
                     defaults: new { controller = "Home", action = "Fever" });
+
+                routes.MapRoute(
+                  name: "Gues_route",
+                  template: "Gissa",
+                  defaults: new { controller = "Home", action = "Gues" });
+
+               
 
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
