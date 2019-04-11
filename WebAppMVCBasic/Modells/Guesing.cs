@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using static Microsoft.AspNetCore.Hosting.Internal.HostingApplication;
 
-namespace WebbAppFirstCore.Models
+namespace WebAppMVCBasic.Models
 {
     public class Gues
     {

@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\People\" />
     <Folder Include="wwwroot\JS\" />
   </ItemGroup>
 

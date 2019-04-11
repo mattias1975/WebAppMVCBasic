@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebbAppFirstCore.Models;
+using WebAppMVC.Models;
 
 namespace WebAppMVCBasic
 {
@@ -62,7 +62,7 @@ namespace WebAppMVCBasic
             if (HttpContext.Session.GetInt32("theNumber") != null)
             {
                 int theNumber = (int)HttpContext.Session.GetInt32("theNumber");
-                ViewBag.msg = WebbAppFirstCore.Models.Gues.Guesing(theNumber,Guesing);
+                ViewBag.msg = WebAppMVCBasic.Models.Gues.Guesing(theNumber,Guesing);
             }
             else
             {
