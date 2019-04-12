@@ -16,6 +16,13 @@ namespace WebAppMVCBasic
         }
 
 
+        [HttpGet]
+        public IActionResult People()
+        {
+            return View();
+        }
+
+
         public IActionResult Kontakt()
         {
             return View();
