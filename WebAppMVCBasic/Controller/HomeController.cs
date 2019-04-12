@@ -14,14 +14,10 @@ namespace WebAppMVCBasic
         {
             return View();
         }
-
-
-        [HttpGet]
         public IActionResult People()
         {
             return View();
         }
-
 
         public IActionResult Kontakt()
         {
