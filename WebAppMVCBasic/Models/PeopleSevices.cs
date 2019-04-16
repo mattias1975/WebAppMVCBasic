@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAppMVCBasic.Modells;
+using WebAppMVCBasic.Models;
 
-namespace WebAppPeople.Models
+namespace WebAppMVCBasic.Models
 {
     public class PeopleService : IPeopleService
     {
@@ -30,13 +30,13 @@ namespace WebAppPeople.Models
         public bool Delete(int id)
         {
        
-            Person person = _context.Poeples.FirstOrDefault(p => p.Id == id);
+            Person person = _context.People.FirstOrDefault(p => p.Id == id);
             if (person == null)
             {
                 return false;
             }
 
-            _context.Poeples.Remove(person);
+            _context.People.Remove(person);
             _context.SaveChanges();
 
             return true;
@@ -44,17 +44,17 @@ namespace WebAppPeople.Models
 
         public Person FindById(int id)
         {
-            return _context.Poeples.FirstOrDefault(p => p.Id == id);
+            return _context.People.FirstOrDefault(p => p.Id == id);
         }
 
         public List<Person> GetPeople()
         {
-            return _context.Poeples.ToList();
+            return _context.People.ToList();
         }
 
         public bool Update(Person person)
         {
-            Person original = _context.Poeples.FirstOrDefault(p => p.Id == person.Id);
+            Person original = _context.People.FirstOrDefault(p => p.Id == person.Id);
 
             if (original == null)
             {

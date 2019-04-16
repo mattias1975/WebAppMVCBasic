@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAppPeople.Models;
+using WebAppMVCBasic.Models;
 
 namespace WebAppMVCBasic.Modells
 {
@@ -12,19 +12,19 @@ namespace WebAppMVCBasic.Modells
         {
             context.Database.EnsureCreated();
 
-            if (context.Poeples.Any())
+            if (context.People.Any())
             {
                 return;
             }
             else
             {
-                context.Poeples.Add(new Person("Mattias", "Rävemåla", "0735 - 124338"));
+                context.People.Add(new Person("Mattias", "Rävemåla", "Malmö"));
                 context.SaveChanges();
 
 
-        } 
-}
+            }
         }
     }
-                
-    
+}
+
+

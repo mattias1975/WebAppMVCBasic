@@ -4,8 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAppMVC.Models;
-using WebAppPeople.Models;
+using WebAppMVCBasic.Models;
 
 namespace WebAppMVCBasic.Controllors
 {
