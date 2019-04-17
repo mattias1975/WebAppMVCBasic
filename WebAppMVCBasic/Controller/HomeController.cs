@@ -14,7 +14,7 @@ namespace WebAppMVCBasic
         {
             return View();
         }
-        public IActionResult People()
+        public IActionResult DbPerson()
         {
             return View();
         }

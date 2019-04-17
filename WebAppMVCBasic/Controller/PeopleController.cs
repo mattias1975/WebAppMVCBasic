@@ -14,30 +14,36 @@ namespace WebAppMVCBasic.Controllors
         public PeopleController(IPeopleService peopleService)
         {
             _peopleService = peopleService;
-            }
-            public IActionResult Person(int id)
+        }
+
+        public IActionResult Index()
+        {
+            return View(_peopleService.GetPeople());
+        }
+
+        public IActionResult Person(int id)
+        {
+            Person person = _peopleService.FindById(id);
+
+            if (person == null)
             {
-                Person person = _peopleService.FindById(id);
-
-                if (person == null)
-                {
-                    return NotFound();
-                }
-
-                return PartialView("_Person", person);
+                return NotFound();
             }
 
-            public IActionResult Details(int id)
+            return PartialView("_Person", person);
+        }
+
+        public IActionResult Details(int id)
+        {
+            Person person = _peopleService.FindById(id);
+
+            if (person == null)
             {
-                Person person = _peopleService.FindById(id);
-
-                if (person == null)
-                {
-                    return NotFound();
-                }
-
-                return PartialView("_Details", person);
+                return NotFound();
             }
+
+            return PartialView("_Details", person);
+        }
 
         [HttpGet]
         public IActionResult Edit(int id)

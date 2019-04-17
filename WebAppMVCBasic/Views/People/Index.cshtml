@@ -1,0 +1,17 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Name</td>
+        <td>@item.City</td>
+        <td>@item.Birthcity</td>
+    </tr>
+    }
+</table>
