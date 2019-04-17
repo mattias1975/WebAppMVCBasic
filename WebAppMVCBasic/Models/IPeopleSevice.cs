@@ -7,10 +7,10 @@ namespace WebAppMVCBasic.Models
 {
     public interface IPeopleService
     {
-        Person Create(string name, string city, string birthcity);
+        Person Create(string name, string city, string phone);
         Person FindById(int id);
         List<Person> GetPeople();
-        bool Update(Person people);
+        bool Update(Person person);
         bool Delete(int id);
     }
 }
