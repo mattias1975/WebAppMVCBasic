@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WebAppMVCBasic.Modells;
+using WebAppMVCBasic.Models;
 
-namespace WebAppPeople.Models
+namespace WebAppMVCBasic.Models
 {
     public class PeopleService : IPeopleService
     {
@@ -29,7 +29,7 @@ namespace WebAppPeople.Models
 
         public bool Delete(int id)
         {
-       
+
             Person person = _context.Poeples.FirstOrDefault(p => p.Id == id);
             if (person == null)
             {

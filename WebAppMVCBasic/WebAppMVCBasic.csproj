@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <Content Include="Controller\HomeController.cs" />
-    <Content Include="Modells\Temperatur.cs" />
+    <Content Include="Models\Temperatur.cs" />
     <Content Include="Views\Shared\_Layout.cshtml.cs" />
   </ItemGroup>
 
